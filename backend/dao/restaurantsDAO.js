@@ -23,7 +23,7 @@ export default class RestaurantsDAO {
   }
 
   // gets a list of restaurants in the db
-  static async getRestaurant({
+  static async getRestaurants({
     // default options for results
     filters = null,
     page = 0,
