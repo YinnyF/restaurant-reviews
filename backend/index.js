@@ -19,11 +19,11 @@ MongoClient.connect(
   process.env.RESTREVIEWS_DB_URI,
   // pass in the options for accessing the db e.g. limit people connected to the db and timeout.
   { 
-    poolSize: 50,
-    wtimeout: 2500,
+    maxPoolSize: 50,
+    wtimeoutMS: 2500,
     // mongodb node.js driver rewrote the tool that it uses to parse mongodb connection strings
     // because the specifics have changed, they put the new connection string parser behind a flag.
-    useNewUrlParse: true 
+    useNewUrlParser: true 
   }
 )
 // catch errors

@@ -21,6 +21,7 @@ app.use(express.json())
 // naming convention (begins with /api/) and then name of API (restaurants)
 // localhost:3000/api/v1/restaurants
 // second parameter is the folder where the routes are going to be.
+// every route is going to start with this
 app.use("/api/v1/restaurants", restaurants)
 // undefined route and what it returns. 
 app.use("*", (req, res) => res.status(404).json({ error: "not found" }))
