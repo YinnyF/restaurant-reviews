@@ -4,6 +4,8 @@ import app from "./server.js"
 import mongodb from "mongodb"
 // allows us to access the env variables.
 import dotenv from "dotenv"
+// allows us access the functions that allow us to access the db in this file.
+import RestaurantsDAO from "./dao/restaurantsDAO.js"
 
 //configure dotenv - load in env variables
 dotenv.config()
@@ -35,6 +37,8 @@ MongoClient.connect(
 })
 // after we have connected to the db and checked for errors - now we can do something! 
 .then(async client => {
+  // before start server call the injectDB async function, this is how we get our initial reference to the restaurants collection in the db.
+  await RestaurantsDAO.injectDB(client)
   // this is how we start our webserver
   app.listen(port, () => {
     // log that we are listening on the port
