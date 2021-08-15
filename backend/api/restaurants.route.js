@@ -10,6 +10,10 @@ const router = express.Router()
 
 // one demo route "/", it's going to get the restaurants API
 router.route("/").get(RestaurantsCtrl.apiGetRestaurants)
+// a route for a specific restaurant, with a specific ID, includes all info on that restaurant and all reviews
+router.route("/id/:id").get(RestaurantsCtrl.apiGetRestaurantById)
+// returns a list of cuisines - because in the front end, the users should be able to select a cuisine from dropdown menu
+router.route("/cuisines").get(RestaurantsCtrl.apiGetRestaurantCuisines)
 
 // set up routes for create/edit/delete reviews - need a Reviews Controller!
 router
