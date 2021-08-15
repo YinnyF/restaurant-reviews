@@ -44,4 +44,32 @@ export default class RestaurantsController {
     // send a json response with all this info to whoever called this URL.
     res.json(response)
   }
+
+  static async apiGetRestaurantById(req, res, next) {
+    try {
+      // look for id parameter - straight in URL like /id/:id
+      let id = req.params.id || {}
+      // call the getRestaurantByID method on restaurantsDAO to find the restaurant!
+      let restaurant = await RestaurantsDAO.getRestaurantByID(id)
+      if (!restaurant) {
+        res.status(404).json({ error: "Not found" })
+        return
+      }
+      res.json(restaurant)
+    } catch (e) {
+      console.log(`api, ${e}`)
+      res.status(500).json({ error: e })
+    }
+  }
+
+  // this just gets a list of all cuisines by asking RestaurantsDAO getCuisines.
+  static async apiGetRestaurantCuisines(req, res, next) {
+    try {
+      let cuisines = await RestaurantsDAO.getCuisines()
+      res.json(cuisines)
+    } catch (e) {
+      console.log(`api, ${e}`)
+      res.status(500).json({ error: e })
+    }
+  }
 }
