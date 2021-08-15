@@ -3,11 +3,19 @@
 import express from "express"
 // make this route file use the controller file
 import RestaurantsCtrl from "./restaurants.controller.js"
+import ReviewsCtrl from "./reviews.controller.js"
 
 // get access to the express router because we're going to be creating the different routes that people can go to
 const router = express.Router()
 
 // one demo route "/", it's going to get the restaurants API
 router.route("/").get(RestaurantsCtrl.apiGetRestaurants)
+
+// set up routes for create/edit/delete reviews - need a Reviews Controller!
+router
+  .route("/review")
+  .post(ReviewsCtrl.apiPostReview)
+  .put(ReviewsCtrl.apiUpdateReview)
+  .delete(ReviewsCtrl.apiDeleteReview)
 
 export default router
