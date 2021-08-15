@@ -2,7 +2,7 @@
 
 // import mongodb to have access to ObjectId
 import mongodb from "mongodb"
-const ObjectId = mongodb.ObjectID
+const ObjectId = mongodb.ObjectId
 
 // create a variable to store a reference to our database.
 let reviews
