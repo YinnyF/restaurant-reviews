@@ -12,6 +12,10 @@ Practising MERN stack 🐳
 
 ## Technology
 
+<p align="center">
+    <img src="./images/MERN.png" alt="MERN" height="100" />
+</p>
+
 ### Back End Server
 * Express
 * Node.js
