@@ -21,6 +21,7 @@ Practising MERN stack 🐳
 * Express
 * Node.js
 * MongoDB Atlas (db hosting, sample data - sample_restaurants)
+* Insomnia (API testing)
 
 ## Usage
 
