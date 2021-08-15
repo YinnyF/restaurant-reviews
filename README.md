@@ -17,11 +17,10 @@ Practising MERN stack 🐳
 </p>
 
 ### Back End Server
+* MongoDB (no Mongoose library)
 * Express
 * Node.js
-* Database: MongoDB (no Mongoose library)
-* DB Hosting: MongoDB Atlas
-* Sample data: sample_restaurants MongoDB Atlas
+* MongoDB Atlas (db hosting, sample data - sample_restaurants)
 
 ## Usage
 
